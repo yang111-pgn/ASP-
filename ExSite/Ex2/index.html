@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式优先级演示</title>
+    <style>
+        h1 {
+            color: red; 
+            text-align: center;
+        }
+
+        p {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .button {
+            font-size: 14px; 
+        }
+    </style>
+
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <h1>CSS三种样式优先级演示</h1>
+
+
+    <p>这是普通段落，样式由内部样式表控制</p>
+
+    <!-- 段落2：内联样式（橙色）覆盖内部（紫色）和外部（绿色） -->
+    <p style="color: orange; font-size: 18px;">这是带内联样式的段落，内联样式优先级最高</p>
+
+    <!-- 按钮：外部（橙色背景、白色文字）+ 内部（14px字体）+ 内联（粉色背景） -->
+    <button class="button" style="background-color: pink;">按钮样式演示</button>
+    <label>本页面由信息231杨烨天2023452195130制作</label>
+</body>
+</html>
