@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘉兴大学官网 - 完美响应式复刻</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --- 1. 基础重置：彻底根除黑点 --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, li {
+            list-style: none !important;
+            margin: 0;
+            padding: 0;
+        }
+        /* 解决 image_e5e064.png 的黑点 */
+        a {
+            text-shadow: none;
+            text-decoration: none !important;
+        }
+
+        /* --- 2. 顶部红色辅助栏 (PC端) --- */
+        .top-bar {
+            background-color: #820000;
+            height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container-custom {
+            max-width: 1240px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .top-links {
+            display: flex;
+            white-space: nowrap;
+        }
+            /* 解决 image_efce4c.png 的换行 */
+            .top-links a {
+                color: rgba(255,255,255,0.9);
+                font-size: 13px;
+                margin: 0 10px;
+            }
+
+                .top-links a:hover {
+                    color: #fdb933;
+                }
+
+        /* --- 3. 导航栏核心容器 --- */
+        .nav-wrapper {
+            background: #fff;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- 4. PC端布局 (992px以上) --- */
+        @media (min-width: 992px) {
+            .nav-wrapper {
+                height: 65px;
+            }
+
+            .mobile-header {
+                display: none;
+            }
+            /* PC隐藏手机头 */
+
+            .logo-center {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                background: #820000;
+                padding: 10px 20px 15px;
+                z-index: 1100;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+
+                .logo-center img {
+                    height: 55px;
+                    display: block;
+                }
+
+            .pc-menu-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1240px;
+                margin: 0 auto;
+                height: 100%;
+            }
+
+            .nav-side {
+                display: flex;
+                width: 44%;
+                height: 100%;
+            }
+
+            .side-left {
+                justify-content: flex-end;
+                padding-right: 60px;
+            }
+
+            .side-right {
+                justify-content: flex-start;
+                padding-left: 60px;
+            }
+
+            .menu-item {
+                position: relative;
+                width: 100px;
+                text-align: center;
+            }
+
+            .menu-link {
+                display: block;
+                line-height: 65px;
+                color: #000 !important; /* 黑色文字 */
+                font-size: 16px;
+                font-weight: 600;
+                white-space: nowrap;
+            }
+
+            .menu-item:hover .menu-link {
+                background: #fdb933;
+                color: #fff !important;
+            }
+            /* 金色Hover */
+
+            /* 下拉菜单 (红底半透明) */
+            .jx-dropdown {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: rgba(130, 0, 0, 0.95);
+                display: none;
+            }
+
+            .menu-item:hover .jx-dropdown {
+                display: block;
+            }
+
+            .jx-dropdown li a {
+                display: block;
+                padding: 12px 0;
+                color: #fff;
+                font-size: 14px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+                .jx-dropdown li a:hover {
+                    color: #fdb933;
+                    background: rgba(0,0,0,0.1);
+                }
+        }
+
+        /* --- 5. 移动端布局 (991px以下) --- */
+        @media (max-width: 991.98px) {
+            .top-bar, .pc-menu-container, .logo-center {
+                display: none;
+            }
+            /* 隐藏PC元素 */
+
+            .mobile-header {
+                background: #820000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px;
+                color: #fff;
+            }
+
+            .mobile-logo img {
+                height: 40px;
+            }
+
+            .hamburger-btn {
+                font-size: 28px;
+                cursor: pointer;
+                padding: 0 10px;
+                border: 1px solid rgba(255,255,255,0.3);
+                border-radius: 4px;
+            }
+
+            /* 移动端下拉列表样式 */
+            .navbar-collapse {
+                background: #fff;
+                border-top: 1px solid #eee;
+            }
+
+            .mobile-nav-item {
+                border-bottom: 1px solid #eee;
+            }
+
+            .mobile-nav-link {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                color: #333;
+                font-size: 16px;
+            }
+
+                .mobile-nav-link span {
+                    color: #ccc;
+                    font-family: "宋体";
+                }
+        }
+
+        /* Banner 渐变层 */
+        .hero {
+            height: 450px;
+            background: linear-gradient(rgba(140,0,0,0.75), rgba(140,0,0,0.75)), url('https://www.zjxu.edu.cn/images/bg_main.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar d-none d-lg-block">
+        <div class="container-custom">
+            <div class="top-links">
+                <a href="#">学生</a><a href="#">教职工</a><a href="#">校友</a><a href="#">访客</a><a href="#">小嘉同学</a>
+            </div>
+            <div class="top-links">
+                <a href="#">书记信箱</a><a href="#">校长信箱</a><a href="#">信息公开</a><a href="#">网站地图</a><a href="#">English Version</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-wrapper">
+        <div class="mobile-header">
+            <a href="#" class="mobile-logo"><img src="https://www.zjxu.edu.cn/images/logo.png" alt="Logo"></a>
+            <div class="hamburger-btn" data-toggle="collapse" data-target="#mainMenu">☰</div>
+        </div>
+
+        <div class="container-fluid position-relative p-0">
+            <div class="logo-center d-none d-lg-block">
+                <img src="https://www.zjxu.edu.cn/images/logo.png" alt="嘉兴大学">
+            </div>
+
+            <div class="pc-menu-container">
+                <ul class="nav-side side-left">
+                    <li class="menu-item"><a href="#" class="menu-link">网站首页</a></li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">校情总览</a>
+                        <ul class="jx-dropdown">
+                            <li><a href="#">学校概况</a></li>
+                            <li><a href="#">现任领导</a></li>
+                            <li><a href="#">校园风貌</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#" class="menu-link">学校机构</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">师资队伍</a></li>
+                </ul>
+                <ul class="nav-side side-right">
+                    <li class="menu-item"><a href="#" class="menu-link">人才培养</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">科学研究</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">合作交流</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">招生就业</a></li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse d-lg-none" id="mainMenu">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">网站首页</a></li>
+                    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">校情总览 <span>&gt;</span></a></li>
+                    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">学校机构 <span>&gt;</span></a></li>
+                    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">师资队伍 <span>&gt;</span></a></li>
+                    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">人才培养 <span>&gt;</span></a></li>
+                    <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" style="background:#f4f4f4;">English Version</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1 style="font-size: clamp(24px, 5vw, 48px); font-weight: bold; letter-spacing: 2px;">深入学习贯彻党的二十届四中全会精神</h1>
+            <p class="mt-4" style="font-size: clamp(16px, 3vw, 24px);">加快建设有特色、善创新的综合性高水平大学</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
