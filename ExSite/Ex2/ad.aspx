@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>广告点击消失</title>
     <style>
-        /* 广告样式 */
         #ad {
             width: 350px;
             height: 200px;
@@ -18,20 +17,20 @@
             cursor: pointer;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ad").click(function () {
+                $(this).hide();
+            });
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- 广告区域 -->
-        <div id="ad" onclick="closeAd()">
-            单击此区域关闭广告
-        </div>
+        <div id="ad">单击此区域关闭广告</div>
     </form>
 
-    <script type="text/javascript">
-        // 点击广告后隐藏
-        function closeAd() {
-            document.getElementById("ad").style.display = "none";
-        }
-    </script>
+    <label>本页面由信息231杨烨天2023452195130制作</label>
 </body>
 </html>

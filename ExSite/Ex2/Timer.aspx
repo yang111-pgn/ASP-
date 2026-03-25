@@ -7,16 +7,16 @@
     <title></title>
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
-        //function refresh() {
-        //    $("#date").text((new Date()).toString());
-        //    setTimeout("refresh()", 1000);
-        //}
         function refresh() {
-            var now = new Date();
-            var timestr = now.toTimeString().split(' ')[0];
-            $("#date").text(timestr);
+            $("#date").text((new Date()).toString());
             setTimeout("refresh()", 1000);
         }
+        //function refresh() {
+        //    var now = new date();
+        //    var timestr = now.totimestring().split(' ')[0];
+        //    $("#date").text(timestr);
+        //    settimeout("refresh()", 1000);
+        //}
     </script>
 </head>
 <body onload="refresh()">

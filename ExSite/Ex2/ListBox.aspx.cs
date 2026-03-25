@@ -5,6 +5,9 @@ public partial class Chap4_ListBox : System.Web.UI.Page
 {
     protected void BtnMoveRight_Click(object sender, EventArgs e)
     {
+        ClientScript.RegisterStartupScript(this.GetType(), "log",
+            $"console.log('移动前 left count: {lstLeft.Items.Count}');", true);
+
         for (int i = 0; i < lstLeft.Items.Count; i++)
         {
             if (lstLeft.Items[i].Selected)
@@ -13,8 +16,13 @@ public partial class Chap4_ListBox : System.Web.UI.Page
                 lstLeft.Items.Remove(lstLeft.Items[i]);
                 i--;
 
+                ClientScript.RegisterStartupScript(this.GetType(), $"log{i}",
+                    $"console.log('删除后 left count: {lstLeft.Items.Count}');", true);
             }
         }
+
+        ClientScript.RegisterStartupScript(this.GetType(), "logFinal",
+            $"console.log('最终 left count: {lstLeft.Items.Count}');", true);
     }
 
     protected void BtnMoveLeft_Click(object sender, EventArgs e)

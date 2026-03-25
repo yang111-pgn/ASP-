@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <asp:TextBox ID="txtInput" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator 
+            <asp:RequiredFieldValidator
                 ID="rfvInput" 
                 runat="server" 
                 ControlToValidate="txtInput" 
