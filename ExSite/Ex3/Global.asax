@@ -1,6 +1,5 @@
 ﻿<%@ Application Language="C#" %>
-
-<script runat="server">
+<script RunAt="server">
     void Application_Start(object sender, EventArgs e)
     {
         Application["OnlineCount"] = 0;
