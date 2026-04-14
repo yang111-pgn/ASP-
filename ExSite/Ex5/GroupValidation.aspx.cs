@@ -46,7 +46,7 @@ public partial class Ex5_GroupValidation : System.Web.UI.Page
     protected void cvIdCard_ServerValidate(object source, ServerValidateEventArgs args)
     {
         string idCard = args.Value.Trim();
-        args.IsValid = true; // 初始化为通过
+        args.IsValid = true; 
 
         try
         {

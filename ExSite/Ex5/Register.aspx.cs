@@ -12,31 +12,28 @@ public partial class Ex5_Register : System.Web.UI.Page
 
     }
 
-    // 身份证号 自定义服务器验证
     protected void csvIdentity_ServerValidate(object source, ServerValidateEventArgs args)
     {
-        // 获取输入的身份证号
         string idCard = args.Value.Trim();
-
         // 必须是18位才进行验证
         if (idCard.Length != 18)
         {
             args.IsValid = false;
             return;
         }
+        // 如果能正常转成日期，验证通过
+        args.IsValid = true;
 
         try
         {
-            // 从身份证中截取 年、月、日
-            string year = idCard.Substring(6, 4);   // 第7-10位
-            string month = idCard.Substring(10, 2); // 第11-12位
-            string day = idCard.Substring(12, 2);   // 第13-14位
+            string year = idCard.Substring(6, 4); 
+            string month = idCard.Substring(10, 2); 
+            string day = idCard.Substring(12, 2);
 
             // 组合成日期并验证是否合法
             DateTime birthDate = DateTime.Parse(year + "-" + month + "-" + day);
 
-            // 如果能正常转成日期，验证通过
-            args.IsValid = true;
+            
         }
         catch
         {

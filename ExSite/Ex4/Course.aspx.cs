@@ -54,7 +54,7 @@ public partial class Ex4_Course : System.Web.UI.Page
     protected void BindTeacher()
     {
         ddlTeacher.Items.Clear();
-        switch (ddlCollege.SelectedValue) // 根据不同的分院添加不同的教师姓名
+        switch (ddlCollege.SelectedValue) 
         {
             case "计算机学院":
                 ddlTeacher.Items.Add(new ListItem("曹明"));

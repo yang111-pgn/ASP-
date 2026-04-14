@@ -17,7 +17,6 @@ public partial class Ex4_Choice_export : System.Web.UI.Page
         }
     }
 
-    // 绑定学年
     protected void BindYear()
     {
         ddlYear.Items.Clear();
@@ -27,7 +26,6 @@ public partial class Ex4_Choice_export : System.Web.UI.Page
         }
     }
 
-    // 绑定学期
     protected void BindTerm()
     {
         ddlTerm.Items.Clear();
@@ -35,7 +33,6 @@ public partial class Ex4_Choice_export : System.Web.UI.Page
         ddlTerm.Items.Add("2");
     }
 
-    // 绑定分院
     protected void BindCollege()
     {
         ddlCollege.Items.Clear();
@@ -44,13 +41,11 @@ public partial class Ex4_Choice_export : System.Web.UI.Page
         ddlCollege.Items.Add("机电学院");
     }
 
-    // 选择分院 → 加载教师
     protected void ddlCollege_SelectedIndexChanged(object sender, EventArgs e)
     {
         BindTeacher();
     }
 
-    // 绑定教师
     protected void BindTeacher()
     {
         ddlTeacher.Items.Clear();
@@ -73,7 +68,6 @@ public partial class Ex4_Choice_export : System.Web.UI.Page
         }
     }
 
-    // 选择教师 → 显示课表
     protected void ddlTeacher_SelectedIndexChanged(object sender, EventArgs e)
     {
         string teacher = ddlTeacher.SelectedValue;
