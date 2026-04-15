@@ -1,4 +1,5 @@
 ﻿<%@ Application Language="C#" %>
+<%@ Import Namespace="System.Collections.Concurrent" %>
 
 <script runat="server">
 
@@ -11,11 +12,19 @@
         ScriptManager.ScriptResourceMapping.AddDefinition("jquery", scriptResDef);
         //初始话聊天信息的配置
         Application["message"] = "/<hr />";
+        // 初始化在线用户字典和总访问人数 
+        Application["OnlineUsers"] = new ConcurrentDictionary<string, string>();
+        Application["TotalVisitors"] = 0;
     }
 
     void Application_End(object sender, EventArgs e)
     {
-        //  在应用程序关闭时运行的代码
+        // 会话结束时，从在线用户列表中移除当前 Session
+        var onlineUsers = Application["OnlineUsers"] as ConcurrentDictionary<string, string>;
+        if (onlineUsers != null)
+        {
+            onlineUsers.TryRemove(Session.SessionID, out _);
+        }
 
     }
 

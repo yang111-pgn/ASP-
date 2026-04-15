@@ -17,7 +17,8 @@
             </asp:CheckBoxList>
             <br />
             <asp:Button ID="btnBuy" runat="server" Text="放入购物车" OnClick="btnBuy_Click" />
-            <asp:Button ID="btnView" runat="server" Text="查看购物车" OnClick="btnView_Click" />
+            <%-- 第五题修改部分：设置 PostBackUrl 实现跨页面提交 --%>
+            <asp:Button ID="btnView" runat="server" Text="查看购物车" PostBackUrl="~/ViewCart.aspx" />
         </div>
     </form>
 </body>

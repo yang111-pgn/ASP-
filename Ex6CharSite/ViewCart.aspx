@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>购物车</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,7 +12,7 @@
             <br />
             <asp:CheckBoxList ID="chklsPet" runat="server"></asp:CheckBoxList>
             <br />
-            <asp:Button ID="btnClear" runat="server" Text="清空购物车" OnClick="btnClear_Click" />
+            <asp:Button ID="btnClear" runat="server" Text="清空购物车" Visible="false" />
             <asp:Button ID="btnContinue" runat="server" Text="继续购物" OnClick="btnContinue_Click" />
         </div>
     </form>
