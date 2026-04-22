@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <Product>
+    <ProductId>1</ProductId>
+    <Name>Meno</Name>
+    <Price>12.10</Price>
+    <CategoryId>1</CategoryId>
+  </Product>
+  <Product>
+    <ProductId>2</ProductId>
+    <Name>Eucalyptus</Name>
+    <Price>28.50</Price>
+    <CategoryId>1</CategoryId>
+  </Product>
+  <Product>
+    <ProductId>4</ProductId>
+    <Name>Butterfly</Name>
+    <Price>24.70</Price>
+    <CategoryId>2</CategoryId>
+  </Product>
+</Products>
