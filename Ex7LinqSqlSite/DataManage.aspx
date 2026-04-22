@@ -18,6 +18,10 @@
             <asp:Button ID="btnInsert" runat="server" Text="插入" OnClick="BtnInsert_Click" />
             <asp:Button ID="btnUpdate" runat="server" Text="修改" OnClick="BtnUpdate_Click" />
             <asp:Button ID="btnDelete" runat="server" Text="删除" OnClick="BtnDelete_Click" />
+            <asp:Button ID="btnProductQuery" runat="server" Text="商品查询" OnClick="BtnProductQuery_Click" />
+            <asp:Button ID="btnProductManage" runat="server" Text="商品管理" OnClick="BtnProductManage_Click" />
+            <asp:Button ID="btnProductToXml" runat="server" Text="商品导出XML" OnClick="BtnProductToXml_Click" />
+            <asp:Button ID="btnManageProductXml" runat="server" Text="管理商品XML" OnClick="BtnManageProductXml_Click" />
             <br /><br />
             <asp:GridView ID="gvCategory" runat="server"></asp:GridView>
         </div>

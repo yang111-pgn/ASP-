@@ -40,6 +40,22 @@ public partial class DataManage : System.Web.UI.Page
     {
         Response.Redirect("Update.aspx?CategoryId=" + txtCategoryId.Text);
     }
+    protected void BtnProductQuery_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ProductQuery.aspx");
+    }
+    protected void BtnProductManage_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ProductManage.aspx");
+    }
+    protected void BtnManageProductXml_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ManageProductXml.aspx");
+    }
+    protected void BtnProductToXml_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ProductToXml.aspx");
+    }
 
     protected void BtnDelete_Click(object sender, EventArgs e)
     {

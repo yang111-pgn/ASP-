@@ -30,4 +30,14 @@
     <Name>1</Name>
     <Descn>1</Descn>
   </Category>
+  <Category>
+    <CategoryId>23</CategoryId>
+    <Name>Dog</Name>
+    <Descn>yyt所做，防伪标识</Descn>
+  </Category>
+  <Category>
+    <CategoryId>23</CategoryId>
+    <Name>Dog</Name>
+    <Descn>yyt</Descn>
+  </Category>
 </Categories>
